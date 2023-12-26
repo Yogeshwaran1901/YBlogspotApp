@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/kpf@jvb.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Caveat+Brush&family=Poppins:wght@800&family=Shadows>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Bree+Serif&family=Caveat+Brush&family=Kalnia:wght@7>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+<style>
+
+.c{
+      color: white;
+      font-size: 3em;
+      margin: 8% 5% 5% 3%;
+      font-weight: bold;
+      text-decoration:none;
+      font-family:"Courier New";
+      background-color: #871279;
+    }
+    .fa2{
+  color: white;
+  margin: 5% 0% 0% 4%;
+  font-size: 2em;
+}
+nav a {
+            padding-top: 2%;
+           color:white;
+           font-size: 2.5em;
+           text-decoration: none;
+       font-family: 'Bodoni Moda', serif;
+  font-family: 'Poppins', sans-serif;
+          text-align:center ;
+
+       }
+     .d{
+       position:sticky;
+     top:14%;
+     background-color: black;
+       display: flex;
+       transition: 3s ease;
+       flex-direction: column;
+       margin-top: .3vh;
+       font-size:1em;
+       width: 30vw;
+       height: 15vh;
+       margin-left:-40vw;
+       border-radius: 5%;
+       }
+.e{
+  height: 7vh;
+  width:102vw;
+  margin-top: -2.1vh;
+  margin-left: -1.5vw;
+  padding-top: 3em;
+  padding-left: -10em;
+  background-color: black;
+}
+.d1{
+  margin-left: -1vw;
+  transition: 2s ease;
+}
+.f{
+  width: 30vw;
+  height:15vh;
+  border-bottom-right-radius: 5%;
+  border-bottom: .1em solid grey;
+}
+	
+
+</style>
+
+</head>
+<body>
+<nav>
+     <div class="e">
+        <i class="fa fa2 fa-bars" onclick="d()"></i>
+       <a href="{{ url_for('index') }}" class="c">YBlogspot</a>
+                                                          </div>
+        <div class="d" id="d">
+          <div class="f">
+            <a href="{{ url_for('create') }}">Create</a>
+          </div>
+       <div class="f">
+       <a href="{{ url_for('about')}}">About</a>
+       </div>
+       <div class="f">
+      <a href="{{ url_for('blogs')}}">Blogs</a>
+       </div>
+       </div>
+       </nav>
+
+    <h1>{{ blog[2]}}</h1>
+     <p>{{ blog[3]}}</p>
+</body>
+
+<script>
+  function d(){
+    var d=document.getElementById("d");
+    d.classList.toggle("d1");
+  }
+   </script>
+</html>
+

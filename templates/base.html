@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/kpf@jvb.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Caveat+Brush&family=Poppins:wght@800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Bree+Serif&family=Caveat+Brush&family=Kalnia:wght@700&family=Poppins:wght@800&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+   <meta charset="UTF-8">
+   <title>{% block title %} {% endblock %} - YBlogspot FlaskApp</title>
+   <style>
+
+
+textarea{
+overflow:hidden;
+}
+
+label{
+color:#164970;
+}
+button{
+color:white;
+background-color:#257cd9;
+border:0px;
+height:3vh;
+width:9vw;
+padding:.15em;
+border-radius:.3em;
+font-size:.6em;
+margin-left:2vw;
+text-align:center;
+font-style:bold;
+}
+   .w2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30vw;
+  margin-top: -18vh;
+}
+.i{
+  color: black;
+  margin:2% 0% 0% 0%;
+  font-family: "Times New Roman";
+  font-weight: 400;
+  font-size: 1.4em;
+  padding-bottom: 2em;
+}
+.y1{
+  height: 4vh;
+  margin-right: 2vw;
+  margin-top: 17vh;
+  border-radius: 50%;
+}
+       .post {
+           padding: 10px;
+           margin: 5px;
+           background-color: #f3f3f3;
+           color: red;
+       }
+
+       nav a {
+            padding-top: 2%;
+           color:white;
+           font-size: 2.5em;
+           text-decoration: none;
+       font-family: 'Bodoni Moda', serif;
+  font-family: 'Poppins', sans-serif;
+          text-align:center ;
+          
+       }
+     .d{
+       position:sticky;
+     top:14%;
+     background-color: black;
+       display: flex;
+       transition: 3s ease;
+       flex-direction: column;
+       margin-top: .3vh;
+       font-size:1em;
+       width: 30vw;
+       height: 15vh;
+       margin-left:-40vw;
+       border-radius: 5%;
+       }
+       .alert {
+           padding: 20px;
+           margin: 5px 5px 1.5vh 5px;
+           color: #970020;
+           background-color: #ffd5de;
+       }
+
+           .c{
+      color: white;
+      font-size: 3em;
+      margin: 8% 5% 5% 3%;
+      font-weight: bold;
+      text-decoration:none;
+      font-family:"Courier New";
+      background-color: #871279;
+    }
+    .fa2{
+  color: white;
+  margin: 5% 0% 0% 4%;
+  font-size: 2em;
+}
+.e{
+  height: 7vh;
+  width:102vw;
+  margin-top: -2.1vh;
+  margin-left: -1.5vw;
+  padding-top: 3em;
+  padding-left: -10em;
+  background-color: black;
+}
+.content {
+ padding-top:6%;
+  box-shadow: .1em .3em .4em grey; 
+  border-radius: 1em;
+font-family: 'Bree serif';
+  text-align: center;
+   height: 45vh;
+  font-size: 2.5em;
+  margin:3em 3.5em 0em 3.5em;
+  color: grey;
+backdrop-filter: blur(10px);
+      background-color:white;
+}
+.d1{
+  margin-left: -1vw;
+  transition: 2s ease;
+}
+.f{
+  width: 30vw;
+  height:15vh;
+  border-bottom-right-radius: 5%;
+  border-bottom: .1em solid grey;
+}
+body{
+ background-color:  #e3e3e3;
+}
+p{
+color:#185799;
+}
+h1{
+font-family: 'Bodoni Moda', serif;
+  font-family: 'Poppins', sans-serif;
+color:black;
+font-size:1.75em;
+margin-top:-2vh;
+}
+
+   </style>
+</head>
+<body>
+   <nav>
+     <div class="e">
+        <i class="fa fa2 fa-bars" onclick="d()"></i>
+       <a href="{{ url_for('index') }}" class="c">YBlogspot</a>
+                                                          </div>
+        <div class="d" id="d">
+          <div class="f">
+            <a href="{{ url_for('create') }}">Create</a>
+          </div>
+       <div class="f">
+       <a href="{{ url_for('about')}}">About</a>
+       </div>
+       <div class="f">
+      <a href="{{ url_for('blogs')}}">Blogs</a>
+       </div>
+       </div>
+       </nav>
+<div class="b1">
+    <div class="content">
+       {% for message in get_flashed_messages() %}
+           <div class="alert">{{ message }}</div>
+       {% endfor %}
+
+       {% block content %} {% endblock %}
+   </div>
+        <p class="i" style="text-align:center;font-family:'Roboto';margin-top:12vh;font-weight:bold;">Share this Article</p>        
+
+   <div class="w2">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155334_vsyue7.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/google'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155254_tpfzfa.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/Twitter'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155351_jewgos.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/facebook'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155418_rulfja.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/youtube'" target="_blank">
+           </div>
+</div>
+  </body>
+   <script>
+  function d(){
+    var d=document.getElementById("d");
+    d.classList.toggle("d1");
+  }
+   </script>
+   </html>

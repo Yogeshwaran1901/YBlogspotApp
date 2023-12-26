@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block content %} <h1>{% block title %} Add some blogs!{% endblock   %}</h1> <form method="post">
+
+<label for="title" style="margin-top:21vh;">Title</label> <br> <input type="text"  style="background-color:lightgrey;" name="title" placeholder="Message title" value="{{ request.form['title'] }}"></input>
+                                             <br>
+
+       <label for="content">Blog Description</label>
+       <br>
+       <textarea name="content"
+                 placeholder="Message content"
+                 rows="20"
+                 cols="70"
+                 >{{ request.form['content'] }}</textarea>
+       <br>
+       <button type="submit">Submit</button>
+   </form>
+{% endblock %}
+
+
