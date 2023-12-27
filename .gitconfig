@@ -1,3 +1,6 @@
 [user]
 	email = yogeshajay3@gmail.com
 	name = Yogeshwaran
+	password = Majayavi19
+[push]
+	autoSetupRemote = true

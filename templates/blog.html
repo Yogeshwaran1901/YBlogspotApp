@@ -5,14 +5,34 @@
   <link rel="stylesheet" href="https://use.typekit.net/kpf@jvb.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Caveat+Brush&family=Poppins:wght@800&family=Shadows>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Bree+Serif&family=Caveat+Brush&family=Kalnia:wght@7>
-
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Caveat+Brush&family=Poppins:wght@800&family=Shws+Into+Light&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,900&family=Bree+Serif&family=Caveat+Brush&family=Kalnia:wght@700&family=Poppins:wght@800&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ blog.title }}</title>
 <style>
+
+.w2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30vw;
+  margin-top: -18vh;
+}
+.i{
+  color: black;
+  margin:6% 0% 0% 0%;
+  font-family: "Times New Roman";
+  font-weight: 400;
+  font-size: 1.4em;
+  padding-bottom: 2em;
+}
+.y1{
+  height: 4vh;
+  margin-right: 2vw;
+  margin-top: 17vh;
+  border-radius: 50%;
+}
 
 .c{
       color: white;
@@ -45,7 +65,7 @@ nav a {
        display: flex;
        transition: 3s ease;
        flex-direction: column;
-       margin-top: .3vh;
+       margin-top: 0.3vh;
        font-size:1em;
        width: 30vw;
        height: 15vh;
@@ -53,8 +73,7 @@ nav a {
        border-radius: 5%;
        }
 .e{
-  height: 7vh;
-  width:102vw;
+  height: 5vh;  width:102vw;
   margin-top: -2.1vh;
   margin-left: -1.5vw;
   padding-top: 3em;
@@ -71,8 +90,39 @@ nav a {
   border-bottom-right-radius: 5%;
   border-bottom: .1em solid grey;
 }
-	
-
+.z{
+margin-left:2em;
+margin-right:2em;
+margin-top:-13em;
+animation:l1 3s ease;
+}
+@keyframes l1{
+0%{
+margin-top:-5vh;
+opacity:0;
+}
+100%{
+margin-top:-10.5vh;
+opacity:1;
+}
+}
+p{
+background-color:lightgrey;
+margin:1em;
+}
+h2{
+text-align:center;
+}
+body{
+background-color:white;
+display:flex;
+flex-direction:column;
+}
+h1{
+text-align:center;
+font-family: 'Bodoni Moda', serif;
+  font-family: 'Poppins', sans-serif;
+}
 </style>
 
 </head>
@@ -94,9 +144,19 @@ nav a {
        </div>
        </div>
        </nav>
-
-    <h1>{{ blog[2]}}</h1>
-     <p>{{ blog[3]}}</p>
+<div class="z">
+<mark><h2>Blog no: {{blog[0]}}</h2>
+</mark><h1>{{ blog[2]}}</h1>
+     <p style="background-color:lightgrey;   font-family: 'Bree serif';">{{blog[3]}}</p>
+                  </div>
+     <p class="i" style="text-align:center;font-family:'Roboto';margin-top:2vh;font-weight:bold;background-color:white;">Share the Article</p>
+    <div class="w2">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155334_vsyue7.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/google'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155254_tpfzfa.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/Twitter'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155351_jewgos.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/facebook'" target="_blank">
+                <img src="https://res.cloudinary.com/dsueinfga/image/upload/v1673778354/IMG_20230115_155418_rulfja.png" class="y1" onclick="location.href='https://en.m.wikipedia.org/wiki/youtube'" target="_blank">
+            </div>
+            <p style="margin-left:-4vw;margin-top:5vh;font-size:.6em;font-weight:bold;background-color:white;">©Copyrights 2024</p>
 </body>
 
 <script>

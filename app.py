@@ -3,7 +3,9 @@ import datetime
 import sqlite3
 import os
 
+
 app = Flask(__name__)
+
 
 
 app.config['SECRET_KEY'] = '3f83a7d3d2818bd6dd156b56408c53a6b9aa97c386255f50'
@@ -20,7 +22,7 @@ def blogs():
         current_directory = os.getcwd()
         database_path = os.path.join(current_directory, 'database.db')
         conn = sqlite3.connect(database_path)
-        conn.row_factory = sqlite3.Row  # This makes rows return as dictionaries
+        conn.row_factory = sqlite3.Row 
         cursor = conn.cursor()
         cursor.execute("SELECT id, title, content FROM posts")
         posts = cursor.fetchall()
@@ -129,7 +131,8 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
-
+        
+           
         if not title:
             flash('Title is required!', 'error')
         elif not content:
@@ -142,12 +145,10 @@ def create():
                 conn = sqlite3.connect(database_path)
                 cursor = conn.cursor()
 
-                # Insert new post
                 cursor.execute("INSERT INTO posts (title, content) VALUES (?, ?)", (title, content))
 
                 conn.commit()
 
-                # Redirect to the 'blogs' route after successful post creation
                 return redirect(url_for('blogs'))
             except sqlite3.Error as e:
                 flash(f'Database error: {e}', 'error')
@@ -182,7 +183,8 @@ def edit(id):
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
-
+        
+        
         if not title:
             flash('Title is required!')
 
@@ -227,3 +229,5 @@ def delete(id):
 
     flash('"{}" was successfully deleted!'.format(post[2]))
     return redirect(url_for('blogs'))
+
+
